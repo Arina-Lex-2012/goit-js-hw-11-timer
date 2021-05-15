@@ -34,13 +34,7 @@ timer.start();
 // function updateClockface({ days, hours, mins, secs }) {
     // refs.a = `${days} : ${hours} : ${mins} : ${secs}`;
 
-function updateClockface ({ days, hours, mins, secs }) {
-    console.log({ days, hours, mins, secs });
-};
-
-updateClockface({ days:3, hours:3, mins:3, secs:3 });
 getTimeComponents();
-
 
 // добавляет ноль перед одноцифровым значением времени
 function pad(value){
