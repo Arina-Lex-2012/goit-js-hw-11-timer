@@ -68,3 +68,6 @@ function getTimeComponents(time){
 //     selector: '#timer-1',
 //     targetDate: new Date('Jul 17, 2019'),
 //   });
+
+//npm run dev
+//npm run dev
