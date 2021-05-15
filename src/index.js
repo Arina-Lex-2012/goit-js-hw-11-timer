@@ -8,10 +8,10 @@ const refs = {
    secs: document.querySelector('[data-value="secs"]'),
 };
 
-console.log(refs.days.textContent);
-console.log(refs.hours.textContent);
-console.log(refs.mins.textContent);
-console.log(refs.secs.textContent);
+// console.log(refs.days.textContent);
+// console.log(refs.hours.textContent);
+// console.log(refs.mins.textContent);
+// console.log(refs.secs.textContent);
 
 const timer = {
     selector: '#timer-1',
@@ -25,7 +25,7 @@ const timer = {
             // console.log(`${days} : ${hours} : ${mins} : ${secs}`);
             getTimeComponents(deltaTime); 
             // console.log(time);
-        }, 1000);
+        }, 0);
     },
 };
 
