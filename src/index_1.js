@@ -1,17 +1,17 @@
 import './sass/main.scss';
 
 const refs = {
-//    clockface: document.getElementById('timer-1'),
+// clockface: document.getElementById('timer-1'),
    days: document.querySelector('[data-value="days"]'),
    hours: document.querySelector('[data-value="hours"]'),
    mins: document.querySelector('[data-value="mins"]'),
    secs: document.querySelector('[data-value="secs"]'),
 };
 
-console.log(refs.days.textContent);
-console.log(refs.hours.textContent);
-console.log(refs.mins.textContent);
-console.log(refs.secs.textContent);
+// console.log(refs.days.textContent);
+// console.log(refs.hours.textContent);
+// console.log(refs.mins.textContent);
+// console.log(refs.secs.textContent);
 
 const timer = {
     selector: '#timer-1',
@@ -25,7 +25,7 @@ const timer = {
             // console.log(`${days} : ${hours} : ${mins} : ${secs}`);
             getTimeComponents(deltaTime); 
             // console.log(time);
-        }, 1000);
+        }, 0);
     },
 };
 
@@ -34,11 +34,11 @@ timer.start();
 // function updateClockface({ days, hours, mins, secs }) {
     // refs.a = `${days} : ${hours} : ${mins} : ${secs}`;
 
-function updateClockface ({ days, hours, mins, secs }) {
-    console.log({ days, hours, mins, secs });
-};
+// function updateClockface ({ days, hours, mins, secs }) {
+//     console.log({ days, hours, mins, secs });
+// };
 
-updateClockface({ days:3, hours:3, mins:3, secs:3 });
+// updateClockface({ days:3, hours:3, mins:3, secs:3 });
 getTimeComponents();
 
 
@@ -47,7 +47,7 @@ function pad(value){
     return String(value).padStart(2, '0');
 };
 
-// преобразует милисекунды в дни, часы, минуты, секунды
+// преобразует милисекунды в дни, часы, минуты, секунды, 
 function getTimeComponents(time){
     const days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
     const hours = pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
@@ -61,8 +61,6 @@ function getTimeComponents(time){
     // return { days, hours, mins, secs};
 };
 
-
-
 // 1 января 1970 00:00, милисекунды
 
 
@@ -70,3 +68,6 @@ function getTimeComponents(time){
 //     selector: '#timer-1',
 //     targetDate: new Date('Jul 17, 2019'),
 //   });
+
+//npm run dev
+//npm run dev
