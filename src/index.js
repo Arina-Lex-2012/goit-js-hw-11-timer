@@ -19,7 +19,7 @@ const timer = new CountdownTimer('Sep 01, 2021');
 setInterval(() => {
     const currentDate = new Date();
     const deltaTime = timer.targetDate - currentDate;
-    console.log(getTimeComponents(deltaTime));
+    getTimeComponents(deltaTime);
 }, 1000);
 
 
