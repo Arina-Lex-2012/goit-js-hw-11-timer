@@ -1,45 +1,33 @@
 import './sass/main.scss';
 
 const refs = {
-//    clockface: document.getElementById('timer-1'),
    days: document.querySelector('[data-value="days"]'),
    hours: document.querySelector('[data-value="hours"]'),
    mins: document.querySelector('[data-value="mins"]'),
    secs: document.querySelector('[data-value="secs"]'),
 };
 
-// console.log(refs.days.textContent);
-// console.log(refs.hours.textContent);
-// console.log(refs.mins.textContent);
-// console.log(refs.secs.textContent);
 
-const timer = {
-    selector: '#timer-1',
-    targetDate: new Date('Sep 01, 2021'),
-
-    start() {
-        setInterval(() => {
-            const currentTime = Date.now();
-            const deltaTime = this.targetDate - currentTime;
-            // const { days, hours, mins, secs } = getTimeComponents(deltaTime);            
-            // console.log(`${days} : ${hours} : ${mins} : ${secs}`);
-            getTimeComponents(deltaTime); 
-            // console.log(time);
-        }, 0);
-    },
+class CountdownTimer{
+    constructor(targetDate) {
+        this.targetDate = new Date(targetDate);
+    }    
 };
 
-timer.start(); 
+const timer = new CountdownTimer('Sep 01, 2021');
 
-// function updateClockface({ days, hours, mins, secs }) {
-    // refs.a = `${days} : ${hours} : ${mins} : ${secs}`;
+setInterval(() => {
+    const currentDate = new Date();
+    const deltaTime = timer.targetDate - currentDate;
+    console.log(getTimeComponents(deltaTime));
+}, 1000);
 
-getTimeComponents();
 
 // добавляет ноль перед одноцифровым значением времени
 function pad(value){
     return String(value).padStart(2, '0');
 };
+
 
 // преобразует милисекунды в дни, часы, минуты, секунды
 function getTimeComponents(time){
@@ -55,12 +43,6 @@ function getTimeComponents(time){
     // return { days, hours, mins, secs};
 };
 
+// // // 1 января 1970 00:00, милисекунды
 
 
-// 1 января 1970 00:00, милисекунды
-
-
-// new CountdownTimer({
-//     selector: '#timer-1',
-//     targetDate: new Date('Jul 17, 2019'),
-//   });
